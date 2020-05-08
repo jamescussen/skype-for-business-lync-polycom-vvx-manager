@@ -66,10 +66,10 @@ Skype for Business / Lync Polycom VVX Manager is a Powershell based GUI tool tha
  in the device to turn on this preference setting). At this point the user will have to enable the following setting in their phone preferences: **Settings -> Basic -> Preferences -> Screen Capture -> Enabled**
 
 
-**Command Line Settings **– If you would like to load the script with your own specific settings to save time, you can specify these in the command line when loading the script. (See the blog post for more details)
+**Command Line Settings** – If you would like to load the script with your own specific settings to save time, you can specify these in the command line when loading the script. (See the blog post for more details)
 
 
-**Settings Dialog **– The “Settings…” button allows you to configure your own passwords, web service port and HTTPS settings for the tool.
+**Settings Dialog** – The “Settings…” button allows you to configure your own passwords, web service port and HTTPS settings for the tool.
 
 
  
@@ -111,7 +111,7 @@ Skype for Business / Lync Polycom VVX Manager is a Powershell based GUI tool tha
   *  Added port number to screen viewing URL. Required when non-standard HTTP/HTTPS port is used.
 
 
-**2.10 Fixes and Enhancement! (28/7/2017) **
+**2.10 Fixes and Enhancement! (28/7/2017)**
 
 
   *  Replaced Invoke-RestMethods with shiny new .net web requests to fix annoying connection issues found in previous versions.
