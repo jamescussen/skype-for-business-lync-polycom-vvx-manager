@@ -25,7 +25,7 @@
 #
 # Known Issues: 
 #		- If Get-CsClientPinInfo throws the error "no available servers to connect to", check your Proxy Settings in IE and make sure you can get to the Lync Control Panel. This cmdlet appears to use IE proxy settings.
-#		- The VVX Phone Manager Tool uses the registration database within the Lync/Skype for Business monitoring database to determine the IP addresses of phones. However, registrations are logged only at the time when a user manually signs in with a PIN or with Domain authentication details. If a user moves to a new subnet/IP Address without signing it out/back in then it’s new IP Address may not show up in the Monitoring database. So in some cases the Monitoring database may not produce a complete list of registered devices..
+#		- The VVX Phone Manager Tool uses the registration database within the Lync/Skype for Business monitoring database to determine the IP addresses of phones. However, registrations are logged only at the time when a user manually signs in with a PIN or with Domain authentication details. If a user moves to a new subnet/IP Address without signing it out/back in then itâ€™s new IP Address may not show up in the Monitoring database. So in some cases the Monitoring database may not produce a complete list of registered devices..
 #
 # Release Notes:
 # 2.00 Initial Release - Support for VVX REST interface
@@ -52,7 +52,7 @@
 # 2.05 Bug Fix
 #	- Added port number to Screen viewing URL. Required when non-standard HTTP/HTTPS port is used.
 #
-# 2.10 Fixes and Enhancements! (why 10? "Because we are not building an incremental product, the new Windows is Windows 10... I’m serious this time." ...Or in this case, so you are encouraged to update because there are very some important fixes in this version)
+# 2.10 Fixes and Enhancements! (why 10? "Because we are not building an incremental product, the new Windows is Windows 10... Iâ€™m serious this time." ...Or in this case, so you are encouraged to update because there are very some important fixes in this version)
 #	- Replaced Invoke-RestMethods with shiny new .net web requests to fix annoying connection issues found in previous versions.
 #	- Added option in Send Message dialog to change the theme of the dialog displayed on the VVX. Default is to send the new SfB dialog look, the original Polycom theme and red/alarm themes are also available.
 #	- Updated Icon to MySkypeLab icon.
@@ -87,7 +87,7 @@
 #
 # 3.00 Added Skype for Business Online support
 #	- The VVX Phone Manager can now list up users from Skype for Business Online and discover their VVX/Trio devices using the Network IP Discover method (supports users with VVX's and Common Area Phone Devices).
-#	- The "Connect SfBO" button will connect the PowerShell session to SfB Online. You will need to enter your username and credentials to connect. Once connected a green "Online" label will be displayed next to the button and the button’s text will change to "Disconnect SfBO" which you can click to disconnect from SfB Online.  
+#	- The "Connect SfBO" button will connect the PowerShell session to SfB Online. You will need to enter your username and credentials to connect. Once connected a green "Online" label will be displayed next to the button and the buttonâ€™s text will change to "Disconnect SfBO" which you can click to disconnect from SfB Online.  
 #	- Two new command line attributes added for SfB Online Username and Password so you can connect without being prompted for credentials (example: .\Skype4B-Lync-PolycomVVXManager3.00.ps1 -OnlineUsernameInput john.smith@tenant.onmicrosoft.com -OnlinePasswordInput "Password")
 #	- Cleaned up the info display and changed font and added some colour. Now includes information about where a user is Homed (OnPrem or Online) and Hosted VM (HostedVoicemailPolicy) fields.
 #	- Added support for testing HTTP/HTTPS config servers (Test Server Button). Files are now downloaded into memory so no file has to be written to disk and checks for VVX250,350,450 firmware. Trio firmware and APP_FILE_PATH_Trio8800 path now supported.
@@ -7057,7 +7057,7 @@ function Get-EffectivePolicy([string] $UserSIPAddress)
 	
 	$user = $null
 	Try{			
-		$user = Invoke-Expression "Get-CsUser -identity sip:${UserSIPAddress} –Filter {HostingProvider -eq `"SRV:`"} -ErrorAction SilentlyContinue"
+		$user = Invoke-Expression "Get-CsUser -identity sip:${UserSIPAddress} â€“Filter {HostingProvider -eq `"SRV:`"} -ErrorAction SilentlyContinue"
 	}Catch{
 		#Write-Host "INFO: Get-CsUser is not available. Expected for O365." -foreground "Yellow"
 	}
@@ -7264,7 +7264,7 @@ function Get-EffectivePolicy([string] $UserSIPAddress)
 				$checkResult = CheckSkypeForBusinessOnline
 				if($checkResult)
 				{
-					$OnlineUser = Invoke-Expression "Get-CsOnlineUser -identity sip:${UserSIPAddress} –Filter {HostingProvider -ne `"SRV:`"} -ErrorAction SilentlyContinue"
+					$OnlineUser = Invoke-Expression "Get-CsOnlineUser -identity sip:${UserSIPAddress} â€“Filter {HostingProvider -ne `"SRV:`"} -ErrorAction SilentlyContinue"
 				}
 			}Catch{
 				#Write-Host "INFO: Get-CsOnlineUser is not available. Expected for O365." -foreground "Yellow"
@@ -7442,7 +7442,7 @@ function UpdateUsersList
 	
 	$Users = @()
 	Try{
-		$Users += Invoke-Expression "Get-CsUser –Filter {HostingProvider -eq `"SRV:`"} -ErrorAction SilentlyContinue"
+		$Users += Invoke-Expression "Get-CsUser â€“Filter {HostingProvider -eq `"SRV:`"} -ErrorAction SilentlyContinue"
 	}Catch{
 		#Write-Host "INFO: Get-CsUser is not available. Expected for O365." -foreground "Yellow"
 	}
@@ -7455,7 +7455,7 @@ function UpdateUsersList
 		$checkResult = CheckSkypeForBusinessOnline
 		if($checkResult)
 		{
-			$Users += Invoke-Expression "Get-CsOnlineUser –Filter {HostingProvider -ne `"SRV:`"} -ErrorAction SilentlyContinue"
+			$Users += Invoke-Expression "Get-CsOnlineUser â€“Filter {HostingProvider -ne `"SRV:`"} -ErrorAction SilentlyContinue"
 		}
 		else
 		{
@@ -14683,7 +14683,7 @@ function SetPin
 					$Script:RTFDisplayString += "{\cf6 ${user}: Set PIN to a random value: $setPin} \line\line "
 										
 					#Possible Future option:
-					#Set-CsPinSendCAWelcomeMail -UserUri bob.kelly@mylynclab.com -From Service.Desk@mylynclab.com –SmtpServer 2013ENTEX001.mylynclab.com -TemplatePath c:/CAWelcomeEmailTemplate.html -Subject "Your Desk Phone PIN Number" -Force
+					#Set-CsPinSendCAWelcomeMail -UserUri bob.kelly@mylynclab.com -From Service.Desk@mylynclab.com â€“SmtpServer 2013ENTEX001.mylynclab.com -TemplatePath c:/CAWelcomeEmailTemplate.html -Subject "Your Desk Phone PIN Number" -Force
 				}
 			}
 		}
