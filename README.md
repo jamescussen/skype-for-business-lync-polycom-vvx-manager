@@ -224,7 +224,7 @@ Skype for Business / Lync Polycom VVX Manager is a Powershell based GUI tool tha
 **For all information on of operation of this tool please visit this link:** 
 
 
-[http://www.myskypelab.com/2015/10/skype-for-business-lync-polycom-vvx.html](http://www.myskypelab.com/2015/10/skype-for-business-lync-polycom-vvx.html)
+[http://www.myteamslab.com/2015/10/skype-for-business-lync-polycom-vvx.html](http://www.myskypelab.com/2015/10/skype-for-business-lync-polycom-vvx.html)
 
 
  
