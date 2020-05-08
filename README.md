@@ -154,9 +154,6 @@ Skype for Business / Lync Polycom VVX Manager is a Powershell based GUI tool tha
 **Note: The config setting httpd.ta.enabled='1' is required for the 5.7 features to work correctly**
 
 
- 
-
-
   *  Added Touch Simulation (Tap/Swipe) when viewing screen on 5.7 software. This works on the range of VVX500, VVX600, VVX400, VVX300 and VVX200 devices (yes, even non-touch screen devices). Simply click on the screen where you would like to send a tap or click
  and drag to send a swipe command. Note: There is no support for hardware button presses (eg. the home button) in the API yet so we will have to wait for full remote control of devices.
 
