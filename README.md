@@ -1,7 +1,8 @@
 ﻿Skype for Business / Lync Polycom VVX Manager
 =============================================
 
-            
+**Note: This tool has now been replaced by the Poly Phone Manager tool over here: https://github.com/jamescussen/Poly-Phone-Manager**
+
 Skype for Business / Lync Polycom VVX Manager is a Powershell based GUI tool that can be used to manage and control Polycom VVX phones.
 
 **[](http://www.myskypelab.com/2015/10/skype-for-business-lync-polycom-vvx.html)**
